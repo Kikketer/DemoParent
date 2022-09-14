@@ -1,0 +1,48 @@
+{
+	"name": "demoparent",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "rollup -c",
+		"watch": "rollup -c -w",
+		"dev": "npm-run-all --parallel start watch",
+		"start": "serve public",
+		"test": "echo todo"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Kikketer/DemoParent.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Kikketer/DemoParent/issues"
+	},
+	"homepage": "https://github.com/Kikketer/DemoParent#readme",
+	"dependencies": {
+		"@rollup/plugin-babel": "^5.3.1",
+		"@rollup/plugin-commonjs": "^17.0.0",
+		"@rollup/plugin-node-resolve": "^11.1.0",
+		"@rollup/plugin-replace": "^4.0.0",
+		"@sentry/react": "6.12.0",
+		"demoLibrary": "git+https://github.com/Kikketer/DemoLibrary.git",
+		"npm-run-all": "^4.1.5",
+		"react": "16.13.1",
+		"react-dom": "16.13.1",
+		"rollup": "^2.36.2",
+		"rollup-plugin-dotenv": "^0.3.0",
+		"rollup-plugin-livereload": "^2.0.5",
+		"rollup-plugin-serve": "^2.0.1",
+		"rollup-plugin-terser": "^7.0.2",
+		"serve": "^11.3.2"
+	},
+	"devDependencies": {
+		"@babel/preset-react": "^7.18.6",
+		"dotenv": "^16.0.2",
+		"eslint": "^8.23.1",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"prettier": "^2.7.1"
+	}
+}
