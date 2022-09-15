@@ -14208,10 +14208,18 @@
 	  return BrowserClient;
 	}(BaseClient);
 
-	var App = (() => {
+	const createMessage = message => {
+	  console.log('Capturing a message');
+	  captureMessage(message || 'This is a test message from the library');
+	  return 'The message was captured';
+	};
+
+	var App = (({
+	  sentry
+	}) => {
 	  const onClick = () => {
-	    console.log('Doing a thing');
-	    captureMessage('This is a message from the Demo');
+	    // This triggers a capture message from the library:
+	    createMessage('This is a message from the Demo Library'); // sentry.captureMessage('This is a message from the Parent')
 	  };
 
 	  return /*#__PURE__*/react.createElement("button", {
@@ -14230,10 +14238,12 @@
 	}; // Create the client to give to the Hub
 
 	const client = new BrowserClient(clientConfig);
-	new Hub(client); // const root = createRoot(document.getElementById('root'))
+	const hub = new Hub(client); // const root = createRoot(document.getElementById('root'))
 	// root.render(<App />)
 
-	reactDom.render( /*#__PURE__*/react.createElement(App, null), document.getElementById('root'));
+	reactDom.render( /*#__PURE__*/react.createElement(App, {
+	  sentry: hub
+	}), document.getElementById('root'));
 
 })();
 //# sourceMappingURL=bundle.js.map

@@ -19,4 +19,4 @@ const hub = new Hub(client)
 
 // const root = createRoot(document.getElementById('root'))
 // root.render(<App />)
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App sentry={hub} />, document.getElementById('root'))

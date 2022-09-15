@@ -1,10 +1,11 @@
 import React from 'react'
-import { captureMessage } from 'demoLibrary'
+import { createMessage } from 'demoLibrary'
 
-export default () => {
+export default ({ sentry }) => {
 	const onClick = () => {
-		console.log('Doing a thing')
-		captureMessage('This is a message from the Demo')
+		// This triggers a capture message from the library:
+		createMessage('This is a message from the Demo Library')
+		// sentry.captureMessage('This is a message from the Parent')
 	}
 
 	return (
